@@ -54,7 +54,17 @@ button {
 button:hover {
   background-color: #ff6699;
 }
+button2 {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  color: #dd1881;
+  font-size: 12px;
+}
 
+button2:hover {
+  opacity: 0.7;
+}
 .despedida {
   text-align: center;
   padding: 20px;

@@ -16,6 +16,24 @@ h1 {
   font-size: 40px;
   color: #ff3366;
 }
+.countdown {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffe600; /* Cambia el color según tu preferencia */
+}
+
+#countdown-timer {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#countdown-timer span {
+  margin: 0 10px;
+  padding: 10px;
+  border: 2px solid #ff3366; /* Borde para los números */
+  border-radius: 5px;
+  background-color: #fff; /* Fondo blanco para los números */
+}
 
 .details {
   text-align: center;
@@ -46,6 +64,7 @@ input {
 .goodbye a {
   text-decoration: none;
   text-align: center;
+  color: #333;
 }
 
 table {

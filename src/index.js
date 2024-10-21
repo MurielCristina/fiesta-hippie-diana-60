@@ -52,3 +52,50 @@ const countdownFunction = setInterval(() => {
       "¡La fiesta ha comenzado!";
   }
 }, 1000);
+
+// Funciones para manejar los popups
+function openMusicPopup() {
+  document.getElementById("music-popup").style.display = "block";
+}
+
+function closeMusicPopup() {
+  document.getElementById("music-popup").style.display = "none";
+}
+
+function openDressCodePopup() {
+  document.getElementById("dress-code-popup").style.display = "block";
+}
+
+function closeDressCodePopup() {
+  document.getElementById("dress-code-popup").style.display = "none";
+}
+
+function openTipsPopup() {
+  document.getElementById("tips-popup").style.display = "block";
+}
+
+function closeTipsPopup() {
+  document.getElementById("tips-popup").style.display = "none";
+}
+
+// Sugerir canción
+function suggestSong() {
+  const nombre = document.getElementById("cancion-nombre").value;
+  const autor = document.getElementById("cancion-autor").value;
+  const link = document.getElementById("cancion-link").value;
+
+  // Almacena la sugerencia en localStorage
+  const cancionesLista = JSON.parse(localStorage.getItem("canciones")) || [];
+  cancionesLista.push({ nombre, autor, link });
+  localStorage.setItem("canciones", JSON.stringify(cancionesLista));
+
+  alert(`Canción sugerida: ${nombre} por ${autor}. Link: ${link}`);
+
+  // Cerrar el popup
+  closeMusicPopup();
+}
+
+// Mostrar el hashtag oficial
+function showHashtag() {
+  alert("#Fiesta60Diana");
+}

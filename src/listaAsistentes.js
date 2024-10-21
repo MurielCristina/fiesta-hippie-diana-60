@@ -1,12 +1,13 @@
-// Función para cargar la lista de asistentes desde localStorage
+// Función para cargar la lista de asistentes y sugerencias de canciones desde localStorage
 function cargarAsistentes() {
   const asistentesLista = JSON.parse(localStorage.getItem("asistentes")) || [];
   const listaElement = document.getElementById("asistentes-lista");
+  const cancionesLista = JSON.parse(localStorage.getItem("canciones")) || [];
 
   // Limpia la tabla actual y vuelve a llenarla
   listaElement.innerHTML = "";
   asistentesLista.forEach((asistente, index) => {
-    const tr = document.createElement("tr"); // Crea una nueva fila para la tabla
+    const tr = document.createElement("tr");
 
     // Crea celdas para cada propiedad
     const tdNumero = document.createElement("td");
@@ -37,13 +38,43 @@ function cargarAsistentes() {
     // Añade la fila a la tabla
     listaElement.appendChild(tr);
   });
+
+  // Mostrar la lista de sugerencias de canciones
+  const cancionesElement = document.getElementById("canciones-lista");
+  cancionesElement.innerHTML = ""; // Limpia la tabla de canciones
+  cancionesLista.forEach((cancion, index) => {
+    const tr = document.createElement("tr");
+
+    const tdNumero = document.createElement("td");
+    tdNumero.textContent = index + 1; // Número de orden
+
+    const tdNombreCancion = document.createElement("td");
+    tdNombreCancion.textContent = cancion.nombre; // Nombre de la canción
+
+    const tdAutor = document.createElement("td");
+    tdAutor.textContent = cancion.autor; // Autor de la canción
+
+    const tdLink = document.createElement("td");
+    const linkElement = document.createElement("a");
+    linkElement.href = cancion.link; // Link de la canción
+    linkElement.textContent = "Escuchar";
+    linkElement.target = "_blank"; // Abrir en nueva pestaña
+    tdLink.appendChild(linkElement);
+
+    // Añade las celdas a la fila
+    tr.appendChild(tdNumero);
+    tr.appendChild(tdNombreCancion);
+    tr.appendChild(tdAutor);
+    tr.appendChild(tdLink);
+
+    // Añade la fila a la tabla
+    cancionesElement.appendChild(tr);
+  });
 }
 
 // Función para eliminar un asistente de la lista
 function eliminarAsistente(nombre) {
   let asistentesLista = JSON.parse(localStorage.getItem("asistentes")) || [];
-
-  // Filtra la lista para eliminar el asistente
   asistentesLista = asistentesLista.filter(
     (asistente) => asistente.nombre !== nombre
   );
@@ -51,5 +82,5 @@ function eliminarAsistente(nombre) {
   cargarAsistentes(); // Recarga la lista de asistentes
 }
 
-// Carga la lista de asistentes al cargar la página
+// Carga la lista de asistentes y canciones al cargar la página
 window.onload = cargarAsistentes;

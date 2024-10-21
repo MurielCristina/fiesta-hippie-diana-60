@@ -26,6 +26,31 @@
         <strong>Lugar:</strong> Hotel Westin, Costa del Este, Ciudad de Panamá
       </p>
     </section>
+    <section class="fiesta">
+      <h2>Hagamos esta fiesta única</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Música</h3>
+          <p>¿Cuál es la canción que no puede faltar en esta fiesta?</p>
+          <button onclick="openMusicPopup()">Sugerir canción</button>
+        </div>
+        <div class="card">
+          <h3>Dress Code</h3>
+          <p>Orientación para tu vestuario</p>
+          <button onclick="openDressCodePopup()">Ver el outfit</button>
+        </div>
+        <div class="card">
+          <h3>Hashtag</h3>
+          <p>Usa el hashtag oficial en Instagram.</p>
+          <button onclick="showHashtag()">#Fiesta60Diana</button>
+        </div>
+        <div class="card">
+          <h3>Tips y Notas</h3>
+          <p>Información adicional para tener en cuenta.</p>
+          <button onclick="openTipsPopup()">+ Info</button>
+        </div>
+      </div>
+    </section>
     <section class="rsvp">
       <h2>Confirma tu Asistencia</h2>
       <form id="rsvp-form">
@@ -49,6 +74,45 @@
         >
       </p>
     </footer>
+
+    <!-- Popups -->
+    <div id="music-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closeMusicPopup()">&times;</span>
+        <h3>Sugerir Canción</h3>
+        <input
+          type="text"
+          id="cancion-nombre"
+          placeholder="Nombre de la canción"
+          required
+        />
+        <input type="text" id="cancion-autor" placeholder="Autor" required />
+        <input
+          type="url"
+          id="cancion-link"
+          placeholder="Link de la canción"
+          required
+        />
+        <button onclick="suggestSong()">Enviar</button>
+      </div>
+    </div>
+
+    <div id="dress-code-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closeDressCodePopup()">&times;</span>
+        <h3>Orientación de Dress Code</h3>
+        <p>Afro, colores, hippie</p>
+      </div>
+    </div>
+
+    <div id="tips-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closeTipsPopup()">&times;</span>
+        <h3>Tips y Notas</h3>
+        <p>Confirma asistencia antes del 21 de noviembre.</p>
+      </div>
+    </div>
+
     <script src="./src/index.js"></script>
     <script src="./src/listaAsistentes.js"></script>
   </body>

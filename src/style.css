@@ -30,8 +30,9 @@ h1 {
 
 .countdown {
   text-align: center;
-  padding: 20px;
-  background-color: #ffe600; /* Cambia el color según tu preferencia */
+  padding: 10px;
+  background-color: var(--color-background);
+  margin: 30px;
 }
 
 #countdown-timer {
@@ -41,10 +42,13 @@ h1 {
 
 #countdown-timer span {
   margin: 0 10px;
-  padding: 10px;
+  padding: 5px;
+  line-height: 45px;
   border: 2px solid var(--color-secondary); /* Borde para los números */
   border-radius: 5px;
-  background-color: #fff; /* Fondo blanco para los números */
+  background-color: var(
+    --color-popup-background
+  ); /* Fondo blanco para los números */
 }
 
 .details {
@@ -56,7 +60,7 @@ h1 {
 .fiesta {
   text-align: center;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--color-popup-background);
 }
 
 .cards {
@@ -117,21 +121,21 @@ table {
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-popup-background);
   padding: 8px;
   text-align: left;
 }
 
 th {
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-popup-background);
 }
 
 .button2 {
   padding: 5px 10px;
-  color: white;
+  color: var(--color-popup-background);
   cursor: pointer;
-  background-color: #dd1881;
+  background-color: var(--color-accent);
   border: none;
   border-radius: 5px;
   font-size: 12px;
@@ -151,7 +155,7 @@ footer p {
 }
 
 footer a {
-  color: #dd1881;
+  color: var(--color-accent);
   text-decoration: none;
 }
 
@@ -184,7 +188,7 @@ footer img {
 }
 
 .close {
-  color: #aaa;
+  color: var(--color-popup-background);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -192,7 +196,7 @@ footer img {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: var(--color-text);
   text-decoration: none;
   cursor: pointer;
 }

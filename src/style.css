@@ -232,42 +232,42 @@ th {
 .button2:hover {
   opacity: 0.7;
 }
+
 /* Estilos para los popups */
 .popup {
-  display: none;
+  display: none; /* Oculto por defecto */
   position: fixed;
-  z-index: 1;
+  z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
 }
 
 .popup-content {
   background-color: var(--color-popup-background);
-  margin: 15% auto;
+  margin: 15% auto; /* Centrado verticalmente */
   padding: 20px;
   border: 1px solid var(--color-popup-border);
-  width: 80%; /* Podrías ajustar el ancho aquí */
+  width: 80%; /* Ajustable */
   max-width: 500px; /* Ancho máximo */
   border-radius: 10px;
+  position: relative; /* Para poder posicionar el botón de cierre */
 }
 
 .close {
-  color: var(--color-popup-background);
-  float: right;
+  color: var(--color-text); /* Asegúrate de que tenga buen contraste */
+  float: right; /* Ubicado a la derecha */
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px; /* Añadir margen para que no esté pegado al borde */
 }
 
-.close:hover,
-.close:focus {
-  color: var(--color-text);
-  text-decoration: none;
-  cursor: pointer;
+.close:hover {
+  color: var(--color-secondary); /* Color al pasar el ratón por encima */
 }
 
 /* Responsive Styles */
@@ -290,6 +290,7 @@ th {
   .card {
     width: 90%; /* Las cards ocuparán el 90% del ancho en pantallas pequeñas */
   }
+
   .countdown-unit {
     margin: 0 65px;
   }

@@ -53,7 +53,10 @@ h1 {
     --color-popup-background
   ); /* Fondo blanco para los números */
 }
-
+.countdown-unit {
+  margin: 0 80px;
+  text-align: start;
+}
 .details {
   text-align: center;
   padding: 20px;

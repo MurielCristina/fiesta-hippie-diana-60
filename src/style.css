@@ -9,13 +9,17 @@
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-text);
   font-family: "Arial", sans-serif;
   color: var(--color-text);
   margin: 0;
   padding: 0;
 }
-
+.container {
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
 header {
   text-align: center;
   padding: 20px;
@@ -32,7 +36,6 @@ h1 {
   text-align: center;
   padding: 10px;
   background-color: var(--color-background);
-  margin: 30px;
 }
 
 #countdown-timer {

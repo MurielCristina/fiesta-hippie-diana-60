@@ -83,6 +83,7 @@ body {
 #countdown-timer {
   font-size: 20px;
   font-weight: bold;
+  margin: 80px 0;
 }
 #countdown-timer span {
   margin: 0 10px;
@@ -99,9 +100,17 @@ body {
 .details {
   text-align: center;
   padding: 20px;
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
+  color: var(--color-popup-background);
 }
-
+.details h2 {
+  font-size: 35px;
+  margin: 30px 0;
+}
+.details p {
+  font-size: 20px; /* Tamaño del texto */
+  margin: 20px 0; /* Espacio entre los párrafos */
+}
 .fiesta {
   text-align: center;
   padding: 20px;
@@ -181,10 +190,15 @@ input {
   background-color: #ff6699;
   transform: scale(1.05);
 }
-.goodbye a {
-  text-decoration: none;
+.goodbye {
   text-align: center;
-  color: var(--color-text);
+  padding: 40px 0;
+  background-color: var(--color-accent); /* Rosa vibrante */
+}
+.goodbye a {
+  color: var(--color-popup-background);
+  text-decoration: none;
+  font-size: 35px;
 }
 
 table {
@@ -218,7 +232,6 @@ th {
 .button2:hover {
   opacity: 0.7;
 }
-
 /* Estilos para los popups */
 .popup {
   display: none;
@@ -276,17 +289,5 @@ th {
 
   .card {
     width: 90%; /* Las cards ocuparán el 90% del ancho en pantallas pequeñas */
-  }
-
-  footer {
-    margin-top: 30px; /* Reducir el margen superior */
-  }
-
-  footer p {
-    font-size: 12px; /* Tamaño de fuente más pequeño */
-  }
-
-  footer img {
-    width: 15px; /* Reducir el tamaño de la imagen del logo */
   }
 }

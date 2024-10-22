@@ -10,7 +10,10 @@
     <header class="hero">
       <div class="hero-content">
         <h1>¡Diana te invita a celebrar su Hippie Birthday!</h1>
-        <h2>Una fiesta llena de <br />Peace & Love</h2>
+        <h2>
+          Una fiesta llena de <br />
+          Peace & Love
+        </h2>
       </div>
     </header>
 
@@ -53,7 +56,9 @@
         <div class="card">
           <h3>Hashtag</h3>
           <p>Usa el hashtag oficial en Instagram.</p>
-          <button class="btn-a" onclick="showHashtag()">#Fiesta60Diana</button>
+          <button class="btn-a" onclick="showHashtagPopup()">
+            #Fiesta60Diana
+          </button>
         </div>
         <div class="card">
           <h3>Tips y Notas</h3>
@@ -114,6 +119,14 @@
         <span class="close" onclick="closeTipsPopup()">&times;</span>
         <h3>Tips y Notas</h3>
         <p>Confirma asistencia antes del 21 de noviembre.</p>
+      </div>
+    </div>
+
+    <div id="hashtag-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closeHashtagPopup()">&times;</span>
+        <h3>Hashtag Oficial</h3>
+        <p>#Fiesta60Diana</p>
       </div>
     </div>
 

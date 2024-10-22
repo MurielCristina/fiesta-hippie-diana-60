@@ -78,6 +78,14 @@ function closeTipsPopup() {
   document.getElementById("tips-popup").style.display = "none";
 }
 
+function showHashtagPopup() {
+  document.getElementById("hashtag-popup").style.display = "block";
+}
+
+function closeHashtagPopup() {
+  document.getElementById("hashtag-popup").style.display = "none";
+}
+
 // Sugerir canción
 function suggestSong() {
   const nombre = document.getElementById("cancion-nombre").value;

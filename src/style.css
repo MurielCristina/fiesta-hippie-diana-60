@@ -160,7 +160,7 @@ body {
 .rsvp {
   text-align: center;
   padding: 20px;
-  background-color: var(--color-secondary);
+  background-color: #ee806c;
 }
 
 form {
@@ -193,7 +193,7 @@ input {
 .goodbye {
   text-align: center;
   padding: 40px 0;
-  background-color: var(--color-accent); /* Rosa vibrante */
+  background-color: #99bd97;
 }
 .goodbye a {
   color: var(--color-popup-background);

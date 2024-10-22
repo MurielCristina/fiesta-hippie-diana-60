@@ -81,7 +81,7 @@ body {
   background-color: var(--color-background);
 }
 #countdown-timer {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   margin: 80px 0;
 }

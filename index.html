@@ -36,31 +36,35 @@
         <div class="card">
           <h3>Música</h3>
           <p>¿Cuál es la canción que no puede faltar en esta fiesta?</p>
-          <button onclick="openMusicPopup()">Sugerir canción</button>
+          <button class="btn-a" onclick="openMusicPopup()">
+            Sugerir canción
+          </button>
         </div>
         <div class="card">
           <h3>Dress Code</h3>
           <p>Orientación para tu vestuario</p>
-          <button onclick="openDressCodePopup()">Ver el outfit</button>
+          <button class="btn-a" onclick="openDressCodePopup()">
+            Ver el outfit
+          </button>
         </div>
         <div class="card">
           <h3>Hashtag</h3>
           <p>Usa el hashtag oficial en Instagram.</p>
-          <button onclick="showHashtag()">#Fiesta60Diana</button>
+          <button class="btn-a" onclick="showHashtag()">#Fiesta60Diana</button>
         </div>
         <div class="card">
           <h3>Tips y Notas</h3>
           <p>Información adicional para tener en cuenta.</p>
-          <button onclick="openTipsPopup()">+ Info</button>
+          <button class="btn-a" onclick="openTipsPopup()">+ Info</button>
         </div>
       </div>
     </section>
-    <section class="rsvp">
+    <section class="rsvp" id="rsvp">
       <h2>Confirma tu Asistencia</h2>
       <form id="rsvp-form">
         <input type="text" id="nombre" placeholder="Tu Nombre" required />
         <input type="tel" id="telefono" placeholder="Tu Teléfono" required />
-        <button type="submit">Enviar</button>
+        <button class="btn-b" type="submit">Enviar</button>
       </form>
       <p>¿Preguntas?, llama al <strong>68114550</strong></p>
     </section>

@@ -77,24 +77,20 @@ body {
 }
 .countdown {
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   background-color: var(--color-background);
 }
-
 #countdown-timer {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
-
 #countdown-timer span {
   margin: 0 10px;
   padding: 5px;
   line-height: 45px;
   border: 2px solid var(--color-secondary); /* Borde para los números */
   border-radius: 5px;
-  background-color: var(
-    --color-popup-background
-  ); /* Fondo blanco para los números */
+  background-color: var(--color-popup-background);
 }
 .countdown-unit {
   margin: 0 80px;
@@ -111,7 +107,9 @@ body {
   padding: 20px;
   background-color: var(--color-popup-background);
 }
-
+.fiesta h2 {
+  font-size: 30px;
+}
 .cards {
   display: flex;
   flex-wrap: wrap; /* Permite que las cards se envuelvan en pantallas pequeñas */
@@ -135,7 +133,21 @@ body {
 .card p {
   margin: 0 0 15px 0;
 }
-
+.btn-a {
+  background-color: var(--color-background); /* Amarillo brillante */
+  color: var(--color-text);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn-a:hover {
+  transform: translateY(-3px); /* Eleva el botón al pasar el ratón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 .rsvp {
   text-align: center;
   padding: 20px;
@@ -155,7 +167,20 @@ input {
   border-radius: 5px;
   width: 200px;
 }
-
+.btn-b {
+  background-color: var(--color-popup-border);
+  color: var(--color-popup-background);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn-b:hover {
+  background-color: #ff6699;
+  transform: scale(1.05);
+}
 .goodbye a {
   text-decoration: none;
   text-align: center;

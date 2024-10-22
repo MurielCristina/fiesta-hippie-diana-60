@@ -77,7 +77,7 @@ body {
 }
 .countdown {
   text-align: center;
-  padding: 5px;
+  padding: 5px 0;
   background-color: var(--color-background);
 }
 #countdown-timer {
@@ -86,7 +86,7 @@ body {
   margin: 80px 0;
 }
 #countdown-timer span {
-  margin: 0 10px;
+  margin: 0px;
   padding: 5px;
   line-height: 45px;
   border: 2px solid var(--color-secondary); /* Borde para los números */
@@ -289,5 +289,8 @@ th {
 
   .card {
     width: 90%; /* Las cards ocuparán el 90% del ancho en pantallas pequeñas */
+  }
+  .countdown-unit {
+    margin: 0 65px;
   }
 }

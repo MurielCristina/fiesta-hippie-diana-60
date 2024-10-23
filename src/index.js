@@ -9,15 +9,34 @@ document
 
     // Asegúrate de que todos los campos están llenos
     if (nombre && telefono) {
-      // Agrega el nombre y el teléfono a localStorage
-      const asistentesLista =
-        JSON.parse(localStorage.getItem("asistentes")) || [];
-      asistentesLista.push({ nombre, telefono }); // Almacena nombre y teléfono
-      localStorage.setItem("asistentes", JSON.stringify(asistentesLista));
-
-      // Muestra una alerta de confirmación
-      alert(`Gracias ${nombre}! Tu asistencia ha sido confirmada.`);
-      this.reset(); // Limpia el formulario
+      // Enviar los datos a Google Sheets
+      fetch(
+        "https://script.google.com/macros/s/AKfycbzuDFL6n9rMYBVzxzGYgowxvFNNEVp1-99HiiE8M5YhpQoTXMkbzKFZAd7cw8bQCC1cWg/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            tipo: "asistente",
+            nombre: nombre,
+            telefono: telefono,
+          }),
+        }
+      )
+        .then((response) => {
+          if (response.ok) {
+            alert(`Gracias ${nombre}! Tu asistencia ha sido confirmada.`);
+            this.reset(); // Limpia el formulario
+          } else {
+            alert("Hubo un problema al enviar tus datos. Intenta nuevamente.");
+          }
+        })
+        .catch((error) => {
+          alert(
+            "Error en la conexión. Por favor, revisa tu conexión a Internet."
+          );
+        });
     } else {
       alert("Por favor, completa todos los campos.");
     }
@@ -92,15 +111,33 @@ function suggestSong() {
   const autor = document.getElementById("cancion-autor").value;
   const link = document.getElementById("cancion-link").value;
 
-  // Almacena la sugerencia en localStorage
-  const cancionesLista = JSON.parse(localStorage.getItem("canciones")) || [];
-  cancionesLista.push({ nombre, autor, link });
-  localStorage.setItem("canciones", JSON.stringify(cancionesLista));
-
-  alert(`Canción sugerida: ${nombre} por ${autor}. Link: ${link}`);
-
-  // Cerrar el popup
-  closeMusicPopup();
+  // Almacena la sugerencia en Google Sheets
+  fetch(
+    "https://script.google.com/macros/s/AKfycbzuDFL6n9rMYBVzxzGYgowxvFNNEVp1-99HiiE8M5YhpQoTXMkbzKFZAd7cw8bQCC1cWg/exec",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        tipo: "cancion",
+        nombreCancion: nombre,
+        autor: autor,
+        link: link,
+      }),
+    }
+  )
+    .then((response) => {
+      if (response.ok) {
+        alert(`Canción sugerida: ${nombre} por ${autor}.`);
+        closeMusicPopup(); // Cerrar el popup después de enviar
+      } else {
+        alert("Hubo un problema al enviar tus datos. Intenta nuevamente.");
+      }
+    })
+    .catch((error) => {
+      alert("Error en la conexión. Por favor, revisa tu conexión a Internet.");
+    });
 }
 
 // Mostrar el hashtag oficial

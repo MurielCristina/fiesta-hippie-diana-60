@@ -7,36 +7,10 @@ document
     const nombre = document.getElementById("nombre").value;
     const telefono = document.getElementById("telefono").value; // Asegúrate de que el campo teléfono esté presente
 
-    // Asegúrate de que todos los campos están llenos
+    // Asegúrate de que todos los campos estén llenos
     if (nombre && telefono) {
-      // Enviar los datos a Google Sheets
-      fetch(
-        "https://script.google.com/macros/s/AKfycbzuDFL6n9rMYBVzxzGYgowxvFNNEVp1-99HiiE8M5YhpQoTXMkbzKFZAd7cw8bQCC1cWg/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            tipo: "asistente",
-            nombre: nombre,
-            telefono: telefono,
-          }),
-        }
-      )
-        .then((response) => {
-          if (response.ok) {
-            alert(`Gracias ${nombre}! Tu asistencia ha sido confirmada.`);
-            this.reset(); // Limpia el formulario
-          } else {
-            alert("Hubo un problema al enviar tus datos. Intenta nuevamente.");
-          }
-        })
-        .catch((error) => {
-          alert(
-            "Error en la conexión. Por favor, revisa tu conexión a Internet."
-          );
-        });
+      alert(`Gracias ${nombre}! Tu asistencia ha sido confirmada.`);
+      this.reset(); // Limpia el formulario
     } else {
       alert("Por favor, completa todos los campos.");
     }
@@ -73,14 +47,6 @@ const countdownFunction = setInterval(() => {
 }, 1000);
 
 // Funciones para manejar los popups
-function openMusicPopup() {
-  document.getElementById("music-popup").style.display = "block";
-}
-
-function closeMusicPopup() {
-  document.getElementById("music-popup").style.display = "none";
-}
-
 function openDressCodePopup() {
   document.getElementById("dress-code-popup").style.display = "block";
 }
@@ -103,41 +69,6 @@ function showHashtagPopup() {
 
 function closeHashtagPopup() {
   document.getElementById("hashtag-popup").style.display = "none";
-}
-
-// Sugerir canción
-function suggestSong() {
-  const nombre = document.getElementById("cancion-nombre").value;
-  const autor = document.getElementById("cancion-autor").value;
-  const link = document.getElementById("cancion-link").value;
-
-  // Almacena la sugerencia en Google Sheets
-  fetch(
-    "https://script.google.com/macros/s/AKfycbzuDFL6n9rMYBVzxzGYgowxvFNNEVp1-99HiiE8M5YhpQoTXMkbzKFZAd7cw8bQCC1cWg/exec",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        tipo: "cancion",
-        nombreCancion: nombre,
-        autor: autor,
-        link: link,
-      }),
-    }
-  )
-    .then((response) => {
-      if (response.ok) {
-        alert(`Canción sugerida: ${nombre} por ${autor}.`);
-        closeMusicPopup(); // Cerrar el popup después de enviar
-      } else {
-        alert("Hubo un problema al enviar tus datos. Intenta nuevamente.");
-      }
-    })
-    .catch((error) => {
-      alert("Error en la conexión. Por favor, revisa tu conexión a Internet.");
-    });
 }
 
 // Mostrar el hashtag oficial

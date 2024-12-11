@@ -1,36 +1,20 @@
-// Agrega un event listener al formulario
-document
-  .getElementById("rsvp-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Previene el comportamiento por defecto del formulario
-
-    const nombre = document.getElementById("nombre").value;
-    const telefono = document.getElementById("telefono").value; // Asegúrate de que el campo teléfono esté presente
-
-    // Asegúrate de que todos los campos estén llenos
-    if (nombre && telefono) {
-      alert(`Gracias ${nombre}! Tu asistencia ha sido confirmada.`);
-      this.reset(); // Limpia el formulario
-    } else {
-      alert("Por favor, completa todos los campos.");
-    }
-  });
-
 // Configurar la fecha y hora de la fiesta en la zona horaria de Panamá (UTC-5)
 const countdownDate = new Date("2025-01-04T20:00:00-05:00").getTime(); // 20:00 en UTC-5
+console.log(countdownDate); // Verifica la fecha de la fiesta
+console.log(new Date().getTime()); // Verifica el tiempo actual
 
 // Actualiza el conteo regresivo cada segundo
 const countdownFunction = setInterval(() => {
-  const now = new Date().getTime();
-  const distance = countdownDate - now;
+  const now = new Date().getTime(); // Obtiene el tiempo actual
+  const distance = countdownDate - now; // Calcula la diferencia de tiempo
 
   // Cálculo del tiempo restante
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24)); // Días
   const hours = Math.floor(
     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  ); // Horas
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); // Minutos
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000); // Segundos
 
   // Muestra el conteo regresivo en la página
   document.getElementById("days").textContent = days;
@@ -40,11 +24,11 @@ const countdownFunction = setInterval(() => {
 
   // Si el conteo regresivo ha terminado, muestra un mensaje
   if (distance < 0) {
-    clearInterval(countdownFunction);
+    clearInterval(countdownFunction); // Detiene la función cuando el conteo ha terminado
     document.getElementById("countdown-timer").innerHTML =
       "¡La fiesta ha comenzado!";
   }
-}, 1000);
+}, 1000); // Ejecuta cada 1 segundo
 
 // Funciones para manejar los popups
 function openDressCodePopup() {
@@ -69,9 +53,4 @@ function showHashtagPopup() {
 
 function closeHashtagPopup() {
   document.getElementById("hashtag-popup").style.display = "none";
-}
-
-// Mostrar el hashtag oficial
-function showHashtag() {
-  alert("#Fiesta60Diana");
 }

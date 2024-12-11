@@ -43,7 +43,11 @@ body {
 .hero-content {
   color: var(--color-popup-background);
 }
-
+#flesha {
+  color: white;
+  font-size: 80px;
+  text-align: center;
+}
 .hero h1 {
   text-align: center;
   font-size: 40px;
@@ -172,7 +176,9 @@ body {
   padding: 20px;
   background-color: #ee806c;
 }
-
+img {
+  max-width: 400px;
+}
 form {
   display: flex;
   flex-direction: column;

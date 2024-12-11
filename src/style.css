@@ -47,6 +47,26 @@ body {
   color: white;
   font-size: 80px;
   text-align: center;
+  animation: bounce 1.5s infinite; /* Anima la flecha */
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px); /* Flecha se mueve hacia abajo */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#scroll-text {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
 }
 .hero h1 {
   text-align: center;

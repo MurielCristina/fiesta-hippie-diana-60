@@ -31,6 +31,15 @@ const countdownFunction = setInterval(() => {
 }, 1000); // Ejecuta cada 1 segundo
 
 // Funciones para manejar los popups
+
+function openMusicPopup() {
+  document.getElementById("music-popup").style.display = "block";
+}
+
+function closeMusicPopup() {
+  document.getElementById("music-popup").style.display = "none";
+}
+
 function openDressCodePopup() {
   document.getElementById("dress-code-popup").style.display = "block";
 }
@@ -53,4 +62,39 @@ function showHashtagPopup() {
 
 function closeHashtagPopup() {
   document.getElementById("hashtag-popup").style.display = "none";
+}
+
+// Sugerir canción
+function suggestSong() {
+  const nombre = document.getElementById("cancion-nombre").value;
+  const autor = document.getElementById("cancion-autor").value;
+  const link = document.getElementById("cancion-link").value;
+
+  // Almacena la sugerencia en Google Sheets
+  fetch(
+    "https://script.google.com/macros/s/AKfycbzuDFL6n9rMYBVzxzGYgowxvFNNEVp1-99HiiE8M5YhpQoTXMkbzKFZAd7cw8bQCC1cWg/exec",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        tipo: "cancion",
+        nombreCancion: nombre,
+        autor: autor,
+        link: link,
+      }),
+    }
+  )
+    .then((response) => {
+      if (response.ok) {
+        alert(`Canción sugerida: ${nombre} por ${autor}.`);
+        closeMusicPopup(); // Cerrar el popup después de enviar
+      } else {
+        alert("Nos vemos en la fiesta!");
+      }
+    })
+    .catch((error) => {
+      alert("Nos vemos en la fiesta!");
+    });
 }

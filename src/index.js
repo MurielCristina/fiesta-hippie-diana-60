@@ -26,7 +26,7 @@ const countdownFunction = setInterval(() => {
   if (distance < 0) {
     clearInterval(countdownFunction); // Detiene la función cuando el conteo ha terminado
     document.getElementById("countdown-timer").innerHTML =
-      "¡La fiesta ha comenzado!";
+      "¡La fiesta ya empezó!";
   }
 }, 1000); // Ejecuta cada 1 segundo
 
